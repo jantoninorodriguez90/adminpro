@@ -11,6 +11,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas01Component } from './graficas01/graficas01.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -20,7 +21,8 @@ import { Graficas01Component } from './graficas01/graficas01.component';
       DashboardComponent,
       ProgressComponent,
       Graficas01Component,
-      PagesComponent
+      PagesComponent,
+      AccountSettingsComponent
    ],
    exports: [
       DashboardComponent,
