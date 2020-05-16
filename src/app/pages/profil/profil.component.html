@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="save(f.value)" class="form p-t-20">
+                    <div class="form-group">
+                        <label>Nombre(s)</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input type="text" class="form-control" placeholder="Nombre(s)" [ngModel]="user.firstname" name="firstname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido(s)</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input type="text" class="form-control" placeholder="Apellido(s)" [ngModel]="user.lastname" name="lastname" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input type="text" class="form-control" placeholder="Email" [ngModel]="user.email" name="email" required [disabled]="user.auth == 'google'">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                       <i class="fa fa-save"></i> Guardar
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="pwd2">Foto de Perfil</label>
+                    <div class="input-group">
+                        <img *ngIf="!tempImage" [src]="user.img | image" alt="" class="w150">
+                        <img *ngIf="tempImage" [src]="tempImage" alt="" class="w150">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="file" name="" id="" class="form-control" (change)="selectImage($event.target.files[0])">
+                    </div>
+                </div>
+
+                <button (click)="updateImage()" [disabled]="!uploadImage" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                  <i class="fa fa-save"></i> Actualizar Foto
+               </button>
+            </div>
+
+        </div>
+    </div>
+</div>

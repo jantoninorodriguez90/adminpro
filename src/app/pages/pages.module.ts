@@ -14,6 +14,9 @@ import { Graficas01Component } from './graficas01/graficas01.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfilComponent } from './profil/profil.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -26,7 +29,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
       PagesComponent,
       AccountSettingsComponent,
       PromesasComponent,
-      RxjsComponent
+      RxjsComponent,
+      ProfilComponent
    ],
    exports: [
       DashboardComponent,
@@ -35,11 +39,13 @@ import { RxjsComponent } from './rxjs/rxjs.component';
       PagesComponent
    ],
    imports: [
+      CommonModule,
       BrowserModule,
       SharedModule,
       PAGES_ROUTES,
       FormsModule,
-      IncrementadorModule
+      IncrementadorModule,
+      PipesModule
    ]
 })
 export class PagesModule { }
